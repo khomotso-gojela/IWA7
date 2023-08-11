@@ -32,10 +32,10 @@ const divider = '----------------------------------'
 
 // Only change below this line
 
-const owed = ((parseInt(leoBalance)*-1) + (parseFloat(sarahBalance)*-1))
-const leo = `${leoName} ${leoSurname.trim()} (Owed R${parseInt(leoBalance)*-1})`
-const sarah = `${sarahName.trim()} ${sarahSurname} (Owed R${parseFloat(sarahBalance)*-1})`
+const owed = ((parseInt(leoBalance)*-1) + (parseFloat(sarahBalance)*-1)).toFixed(2)
+const leo = `${leoName} ${leoSurname.trim()} (Owed R ${parseInt(leoBalance)*-1})`
+const sarah = `${sarahName.trim()} ${sarahSurname} (Owed R ${parseFloat(sarahBalance)*-1})`
 const total = "Total amount owed: "
-const result = leo + "\n" + sarah + "\n" + divider + "\n" +"  " + total + 'R'+owed.toFixed(2) + "  "+ "\n" + divider
+const result = leo + "\n" + sarah + "\n" + divider + "\n" +"  " + total + 'R '+ parseFloat(owed).toLocaleString().replace(',',' ') + "  "+ "\n" + divider
 
 console.log(result)
